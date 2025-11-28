@@ -4,22 +4,6 @@ const GenAI = require("@google/generative-ai");
 const { TwitterApi } = require("twitter-api-v2");
 // const SECRETS = require("./SECRETS");
 
-async function listModels() {
-  try {
-    console.log("Fetching available Gemini models...\n");
-    const models = await genAI.listModels();
-    console.log("Available models:");
-    for await (const model of models) {
-      console.log(`- ${model.name}`);
-      console.log(`  Display Name: ${model.displayName}`);
-      console.log(`  Supported Methods: ${model.supportedGenerationMethods.join(", ")}`);
-      console.log("");
-    }
-  } catch (error) {
-    console.error("Error listing models:", error);
-  }
-}
-
 const twitterClient = new TwitterApi({
   appKey: process.env.APP_KEY,
   appSecret: process.env.APP_SECRET,
@@ -34,8 +18,6 @@ const genAI = new GenAI.GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 async function run() {
   // For text-only input, use the gemini-pro model
-  await listModels();
-  
   const model = genAI.getGenerativeModel({
     model: "gemini-pro",
     generationConfig,
