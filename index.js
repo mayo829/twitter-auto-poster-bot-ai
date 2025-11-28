@@ -19,21 +19,6 @@ const requiredEnvVars = [
   "GEMINI_API_KEY",
 ];
 
-console.log("\n--- Checking Environment Variables ---");
-const missingVars = requiredEnvVars.filter((varName) => !process.env[varName]);
-if (missingVars.length > 0) {
-  console.error("❌ Missing required environment variables:", missingVars);
-  console.error("Make sure your .env file exists and contains all required variables");
-  process.exit(1);
-} else {
-  console.log("✅ All required environment variables are present");
-  requiredEnvVars.forEach((varName) => {
-    const value = process.env[varName];
-    console.log(
-      `  ${varName}: ${value ? value.substring(0, 8) + "..." : "undefined"}`
-    );
-  });
-}
 
 console.log("\n--- Initializing Twitter Client ---");
 let twitterClient;
