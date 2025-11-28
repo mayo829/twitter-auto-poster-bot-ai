@@ -1,7 +1,7 @@
 // By VishwaGauravIn (https://itsvg.in)
 
 // Load environment variables from .env file FIRST
-require("dotenv").config();
+// require("dotenv").config();
 
 const GenAI = require("@google/generative-ai");
 const { TwitterApi } = require("twitter-api-v2");
