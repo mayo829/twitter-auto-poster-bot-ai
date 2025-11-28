@@ -41,7 +41,7 @@ async function run() {
     - The Takeaway: A forward-looking statement or question to drive engagement.
    - Novelty Check: Before outputting, ask yourself: "Is this generic? If yes, find a more niche/specific angle."
 
-  Output Format: Please format the response clearly with bolding for emphasis. Use a "TL;DR" style bullet point section if the news is complex.```
+  Output Format: Please format the response clearly with bolding for emphasis. Use a "TL;DR" style bullet point section if the news is complex. Make sure to return a copy pastable response, fully ready to be posted.```
   
 
   const result = await model.generateContent(prompt);
