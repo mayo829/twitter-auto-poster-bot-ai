@@ -114,7 +114,8 @@ The image should capture attention and convey innovation and AI technology.`;
     const imageBuffer = Buffer.from(imagePart.inlineData.data, "base64");
     fs.writeFileSync(imagePath, imageBuffer);
 
-    return imagePath;
+    // return imagePath;
+    return null
   } catch (error) {
     console.error("Error generating image:", error);
     return null; // Return null if image generation fails, tweet will go out without image
